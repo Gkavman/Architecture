@@ -76,6 +76,8 @@
 
             MinorCPU
             
+            Simulation Statistics
+            
             final_tick 35069000 # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
             host_inst_rate 149735 # Simulator instruction rate (inst/s)
             host_mem_usage 658284 # Number of bytes of host memory used
@@ -91,6 +93,8 @@
             
             TimingSimpleCPU
             
+            Simulation Statistics
+            
             final_tick 42227000 # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
             host_inst_rate 120623 # Simulator instruction rate (inst/s)
             host_mem_usage 656492 # Number of bytes of host memory used
@@ -103,10 +107,87 @@
             sim_seconds 0.000042 # Number of seconds simulated
             sim_ticks 42227000 # Number of ticks simulated
             
-          b) Όπως ειδαμε και στις γενικες πληροφοριες πιο πανω, ο TimingSimpleCPU ειναι πιο αργος με πιο λεπτομερη προσβαση αρα απαιτουνται περισσοτεροι κυκλοι σε σχεση με 
-          τον MinorCPU. Αυτο φαινεται και απο τους κυκλους που προσομοιωθηκαν στις δυο περιπτωσεις (TimingSimpleCPU > MinorCPU)
+####      3b) Διαφορα σε TimingSimpleCPU και MinorCPU
+
+          Όπως ειδαμε και στις γενικες πληροφοριες πιο πανω, ο TimingSimpleCPU ειναι πιο αργος με πιο λεπτομερη προσβαση αρα απαιτουνται περισσοτεροι κυκλοι σε σχεση με 
+          τον MinorCPU. Αυτο φαινεται και απο τους κυκλους που προσομοιωθηκαν στις δυο περιπτωσεις. (TimingSimpleCPU > MinorCPU)
+          Ο Minor εκτελεί μία πιο αυστηρή pipeline εκδοση και το αποτέλεσμα χρειάζεται λιγότερους κύκλους σε σχέση με τις χρονικές προσπελάσεις μνήμης οι οποίες είναι πιο 
+          λεπτομερεις και χάνεται χρόνος όσο χρειάζεται να μείνει στην cache μέχρι να πάρει την έγκριση για έξοδο.
           
-          c) 
+          
+####      3c) Αλλαγες παραμετρων για διαφορετικα αποτελεσματα
+            
+####           Αλλαγή της τεχνολογία της μνήμης από DDR3_1600_8_X_8 σε DDR3_2133_8_X_8
+               Αποτελεσμα: Βελτιωση ταχυτητας εκτελεσης
+               
+               Εντολη που χρησιμοποιηθηκε:
+                ./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --caches --mem-typ=DDR3_2133_8x8 -c tests/test-progs/myprog/myc_arm
+                
+                Simulation Statistics
+                
+                final_tick 33979000 # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
+                host_inst_rate 114313 # Simulator instruction rate (inst/s)
+                host_mem_usage 658280 # Number of bytes of host memory used
+                host_op_rate 128239 # Simulator op (including micro ops) rate (op/s)
+                host_seconds 0.09 # Real time elapsed on the host
+                host_tick_rate 367300709 # Simulator tick rate (ticks/s)
+                sim_freq 1000000000000 # Frequency of simulated ticks
+                sim_insts 10561 # Number of instructions simulated
+                sim_ops 11861 # Number of ops (including micro ops) simulated
+                sim_seconds 0.000034 # Number of seconds simulated
+                sim_ticks 33979000 # Number of ticks simulated
+                
+####           Αλλαγη της συχνοτητας σε 3GHz
+               Αποτελεσμα: Βελτιωση ταχυτητας εκτελεσης
+               
+               Εντολη που χρησιμοποιηθηκε:
+               ./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --caches --mem-typ=DDR3_2133_8x8 --sys-clock=3GHz -c tests/test-progs/myprog/myc_arm
+               
+                Simulation Statistics
+                
+                final_tick 30394000 # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
+                host_inst_rate 144430 # Simulator instruction rate (inst/s)
+                host_mem_usage 658284 # Number of bytes of host memory used
+                host_op_rate 161912 # Simulator op (including micro ops) rate (op/s)
+                host_seconds 0.07 # Real time elapsed on the host
+                host_tick_rate 414803158 # Simulator tick rate (ticks/s)
+                sim_freq 3000000000000 # Frequency of simulated ticks
+                sim_insts 10561 # Number of instructions simulated
+                sim_ops 11861 # Number of ops (including micro ops) simulated
+                sim_seconds 0.000030 # Number of seconds simulated
+                sim_ticks 30394000 # Number of ticks simulated
+                
+####           Αλλαγη σε TimingSimpleCPU κρατώντας τις αλλες παραμετρους ιδιες
+               Αποτελεσμα: Μειωση ταχυτητας σε σχεση με αντιστοιχο MinorCPU, βελτιωση σε σχεση με TimingCPU του ερωτηματος 3α.
+               
+               Εντολη που χρησιμοποιηθηκε:
+               ./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU --caches --mem-typ=DDR3_2133_8x8 --sys-clock=3GHz -c tests/test-progs/myprog/myc_arm
+               
+               Simulation Statistics
+                
+               final_tick 37289000 # Number of ticks from beginning of simulation (restored from checkpoints and never reset)
+               host_inst_rate 206356 # Simulator instruction rate (inst/s)
+               host_mem_usage 656492 # Number of bytes of host memory used
+               host_op_rate 229360 # Simulator op (including micro ops) rate (op/s)
+               host_seconds 0.05 # Real time elapsed on the host
+               host_tick_rate 728933986 # Simulator tick rate (ticks/s)
+               sim_freq 3000000000000 # Frequency of simulated ticks
+               sim_insts 10529 # Number of instructions simulated
+               sim_ops 11728 # Number of ops (including micro ops) simulated
+               sim_seconds 0.000037 # Number of seconds simulated
+               sim_ticks 37289000 # Number of ticks simulated
+               
+####           Δυσκολιες/Παρατηρησεις
+               
+               Οι κύριες δυσκολίες που παρουσιάστηκαν είχαν να κάνουν με την άγνωστη μέχρι προσφατα χρήση του gem5 και την αρχάρια γνώση bash ubuntu. Τα πρώτα προβλήματα 
+               είχαν να κάνουν με το install των απαιτήσεων του εξομοιωτή καθώς υπήρχαν αρκετές φορές μικροσφάλματα που έπαιρνε κάποια ώρα να τα διορθώσεις. Στη συνέχεια 
+               υπήρξαν εμπόδια κυρίως συντακτικά στην αλλαγή των παραμέτρων του επεξεργαστή. Η χρήση του Markdown ήταν εύκολη και γρήγορα έγινε αντιληπτή. Υπήρξε καθυστέρηση 
+               ολοκλήρωσης καθώς το τερματικό μου είχε έκδοση της python που δεν συνεργαζόταν με τον εξομοιωτή και επίσης κόλλησα στο σημείο του compile της c καθώς δεν ήξερα 
+               γιατι δεν λειτουργεί το εκτελέσιμο αλλά τελικά απλά ήθελε μετατροπή σε ΑΡΜ. Μου φάνηκε ιδιαίτερα ενδιαφέρον το γεγονός ότι μπορείς να αλλάξεις τις παραμέτρους 
+               ενός επεξεργαστή στα όρια που θέλεις και να παρακολουθήσεις την πορεία την εκτέλεσης μέσα από τη μνήμη. Φαντάζομαι πως υπάρχουν εντολές επιπλέον οπτικοποίησης 
+               της λειτουργείας αυτής για εκτενέστερη παρακολούθηση του pipeline.
+             
+             
             
             
             
