@@ -190,8 +190,14 @@
                της λειτουργείας αυτής για εκτενέστερη παρακολούθηση του pipeline.
              
              
-            
-            
+####           Βιβλιογραφια
+               
+               https://stackoverflow.com/questions/42734909/how-can-i-compile-and-run-a-c-program-with-openmp-in-gem5-full-system
+               https://gem5.googlesource.com/public/gem5-website/+/refs/heads/stable/_pages/documentation/learning_gem5/part1/part1_2_simple_config.md
+               http://learning.gem5.org/book/part1/building.html
+               https://www.gem5.org/documentation/general_docs/memory_system/index.html#access-types
+               https://guides.github.com/features/mastering-markdown/
+               https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax
             
             
   
