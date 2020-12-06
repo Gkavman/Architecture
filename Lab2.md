@@ -52,42 +52,42 @@
 ##### 2) α)
   	    
 	bzip2:
-			              sim_seconds                                    0.078875                       # Number of seconds simulated
-                    system.cpu.cpi                                 1.577499                       # CPI: cycles per instruction
-                    system.cpu.dcache.overall_miss_rate::total     0.012718                       # miss rate for overall accesses
+			        sim_seconds                                    0.078875                       # Number of seconds simulated
+                   		system.cpu.cpi                                 1.577499                       # CPI: cycles per instruction
+                    		system.cpu.dcache.overall_miss_rate::total     0.012718                       # miss rate for overall accesses
 		                system.cpu.icache.overall_miss_rate::total     0.000070                       # miss rate for overall accesses
 		                system.l2.overall_miss_rate::total             0.332104                       # miss rate for overall accesses
   	   
 	libm:
-			              sim_seconds                                    0.175150                       # Number of seconds simulate
-			              system.cpu.cpi                                 3.502995                       # CPI: cycles per instruction
-			              system.cpu.dcache.overall_miss_rate::total     0.060972                       # miss rate for overall accesses
-			              system.cpu.icache.overall_miss_rate::total     0.000090                       # miss rate for overall accesses
-			              system.l2.overall_miss_rate::total             0.999961                       # miss rate for overall accesses
+			        sim_seconds                                    0.175150                       # Number of seconds simulate
+			        system.cpu.cpi                                 3.502995                       # CPI: cycles per instruction
+			        system.cpu.dcache.overall_miss_rate::total     0.060972                       # miss rate for overall accesses
+			        system.cpu.icache.overall_miss_rate::total     0.000090                       # miss rate for overall accesses
+			        system.l2.overall_miss_rate::total             0.999961                       # miss rate for overall accesses
   	
 	hmmer:
   	  
-			              sim_seconds                                    0.070205                       # Number of seconds simulated
-			              system.cpu.cpi                                 1.404099                       # CPI: cycles per instruction
-			              system.cpu.dcache.overall_miss_rate::total     0.006198                       # miss rate for overall accesses
-			              system.cpu.icache.overall_miss_rate::total     0.000170                       # miss rate for overall accesses
-			              system.l2.overall_miss_rate::total             0.031956                       # miss rate for overall accesses
+			        sim_seconds                                    0.070205                       # Number of seconds simulated
+			        system.cpu.cpi                                 1.404099                       # CPI: cycles per instruction
+			        system.cpu.dcache.overall_miss_rate::total     0.006198                       # miss rate for overall accesses
+			        system.cpu.icache.overall_miss_rate::total     0.000170                       # miss rate for overall accesses
+			        system.l2.overall_miss_rate::total             0.031956                       # miss rate for overall accesses
   	
 	Sjeng:
 			
-                    sim_seconds                                     0.031043                       # Number of seconds simulated
-			              system.cpu.cpi                                  1.356958                       # CPI: cycles per instruction
-			              system.cpu.dcache.overall_miss_rate::total      0.003158                       # miss rate for overall accesses
-			              system.cpu.icache.overall_miss_rate::total      0.005552                       # miss rate for overall accesses
-			              system.l2.overall_miss_rate::total              0.982847                       # miss rate for overall accesses
+                    		sim_seconds                                     0.031043                       # Number of seconds simulated
+			        system.cpu.cpi                                  1.356958                       # CPI: cycles per instruction
+			        system.cpu.dcache.overall_miss_rate::total      0.003158                       # miss rate for overall accesses
+			        system.cpu.icache.overall_miss_rate::total      0.005552                       # miss rate for overall accesses
+			        system.l2.overall_miss_rate::total              0.982847                       # miss rate for overall accesses
   	
 	mcf:
 			
-                    sim_seconds                                     0.007024                       # Number of seconds simulated
-			              system.cpu.cpi                                  1.523883                       # CPI: cycles per instruction
-			              system.cpu.dcache.overall_miss_rate::total      0.009359                       # miss rate for overall accesses
-			              system.cpu.icache.overall_miss_rate::total      0.011381                       # miss rate for overall accesses
-			              system.l2.overall_miss_rate::total              0.502183                       # miss rate for overall accesses
+                    		sim_seconds                                     0.007024                       # Number of seconds simulated
+			        system.cpu.cpi                                  1.523883                       # CPI: cycles per instruction
+			        system.cpu.dcache.overall_miss_rate::total      0.009359                       # miss rate for overall accesses
+			        system.cpu.icache.overall_miss_rate::total      0.011381                       # miss rate for overall accesses
+			        system.l2.overall_miss_rate::total              0.502183                       # miss rate for overall accesses
  
   
    			
@@ -144,24 +144,31 @@
 			  system.cpu.cpi                               1.263995                       # CPI: cycles per instruction	
 		
 		
-	  Ο τρόπος που προσέγγισα το πρόβλημα βασίζεται σε σημειώσεις του μαθήματος που είναι ανερτημένες στο elearning αλλά και έρευνα στο διαδίκτυο. Αρχικά , ένας τρόπος να βελτιωθεί η απόδοση το συστήματος είναι η μείωση των miss rate & miss penalty. Όπως αναφέρεται και 
-    στις σημειώσεις 3 είδη misses αναγνωρίζονται , compulsory , capacity & conflict. Γίνεται αντιληπτό ότι πρέπει με κάποιο τρόπο να μειωθούν αυτά τα λάθη. Τα capacity προφανώς ο τρόπος να τα μειώσουμε είναι με αύξηση του μεγέθους των μνημών, βέβαια αυτό αυξάνει και 
-    το κόστος που θα αναλυθεί και στο ερώτημα 3. Με αύξηση του μεγέθους του μπλοκ μπορεί να μειωθούν τα compulsory misses αλλά υπάρχει περίπτωση να έχουμε αύξηση των conflict όπου τα miss penalty είναι μεγαλύτερα και θα μειωθεί πάλι η απόδοση .
+	  Ο τρόπος που προσέγγισα το πρόβλημα βασίζεται σε σημειώσεις του μαθήματος που είναι ανερτημένες στο elearning αλλά και έρευνα στο διαδίκτυο. Αρχικά , ένας τρόπος να 
+	  βελτιωθεί η απόδοση το συστήματος είναι η μείωση των miss rate & miss penalty. Όπως αναφέρεται και στις σημειώσεις 3 είδη misses αναγνωρίζονται , compulsory , capacity 
+	  & conflict. Γίνεται αντιληπτό ότι πρέπει με κάποιο τρόπο να μειωθούν αυτά τα λάθη. Τα capacity προφανώς ο τρόπος να τα μειώσουμε είναι με αύξηση του μεγέθους των 
+	  μνημών, βέβαια αυτό αυξάνει και το κόστος που θα αναλυθεί και στο ερώτημα 3. Με αύξηση του μεγέθους του μπλοκ μπορεί να μειωθούν τα compulsory misses αλλά υπάρχει 
+	  περίπτωση να έχουμε αύξηση των conflict όπου τα miss penalty είναι μεγαλύτερα και θα μειωθεί πάλι η απόδοση .
 		    -Μικρότερα μπλοκ μεγαλύτερο missrate 
 		    -Μεγαλύτερα μπλοκ μεγαλύτερο misspenalty ( πλεονεκτήματα spatial locality)
 	 
-	  Μπορούμε να αυξήσουμε το associativity , που όπως λέει ο 2:1 thumb rule  μία DMA cache N size έχει ίδιο miss rate με μία 2 way N/2 size cache. Βέβαια και σε αυτό υπάρχει πρόβλημα καθώς μεγαλύτερο assoc σημαίνει περισσότερο hardware άρα και αύξηση κόστους-πολυπλοκότητας. 
-	  Ένας ακόμη τρόπος που δεν θεωρώ πως διορθωνεται στην εργασία μας αλλά είναι ιδιαίτερα χρήσιμος έχει να κάνει με hardware prefetching. Όπου επί της ουσίας δεδομένα καλούνται πριν ζητηθούν από το πρόγραμμα. Επίσης η δημιουργία virtual memory. 
-	  Σε ένα σύστημα 2-επιπέδων cache ο AMAT(Average memory access time) = L1 HT + L1 MR × (L2 HT + L2 MR × L2 MP) . Αν θεωρήσουμε ότι γνωρίζουμε τα ΜΡ για εντολές δεδομένων(ld,st) και ή απλές εντολές(add, sub ) μπορούμε να προσαρμόσουμε τα μεγέθη των dcache , icache , l2 cache ,
-    cache line size και associativy  ώστε η προέκταση της από πάνω εξίσωσης που συνδέεται άμεσα με το   CPI να παίρνει όσο δυνατόν μικρότερες τιμές.  
+	  Μπορούμε να αυξήσουμε το associativity , που όπως λέει ο 2:1 thumb rule  μία DMA cache N size έχει ίδιο miss rate με μία 2 way N/2 size cache. Βέβαια και σε αυτό 
+	  υπάρχει πρόβλημα καθώς μεγαλύτερο assoc σημαίνει περισσότερο hardware άρα και αύξηση κόστους-πολυπλοκότητας. 
+	  Ένας ακόμη τρόπος που δεν θεωρώ πως διορθωνεται στην εργασία μας αλλά είναι ιδιαίτερα χρήσιμος έχει να κάνει με hardware prefetching. Όπου επί της ουσίας δεδομένα 	
+	  καλούνται πριν ζητηθούν από το πρόγραμμα. Επίσης η δημιουργία virtual memory. 
+	  Σε ένα σύστημα 2-επιπέδων cache ο AMAT(Average memory access time) = L1 HT + L1 MR × (L2 HT + L2 MR × L2 MP) . Αν θεωρήσουμε ότι γνωρίζουμε τα ΜΡ για εντολές 
+	  δεδομένων(ld,st) και ή απλές εντολές(add, sub ) μπορούμε να προσαρμόσουμε τα μεγέθη των dcache , icache , l2 cache ,
+    	  cache line size και associativy  ώστε η προέκταση της από πάνω εξίσωσης που συνδέεται άμεσα με το   CPI να παίρνει όσο δυνατόν μικρότερες τιμές.  
 	  Βασίστηκα σε όλα τα προαναφερθέντα ώστε να προσαρμόσω καλύτερα τις τιμές των configurable στοιχείων ώστε να ληφθούν τα άνωθεν αποτελέσματα. 
-    Λόγω προβλήματος με την εφαρμογή των γραφημάτων δεν μπόρεσα να βγάλω αντίστοιχα γραφήματα για το ερώτημα β οπότε δημιούργησα τα αρχεία txt για κάθε benchmark με επαρκή σχόλια για αποσαφήνιση της συλλογιστικής πορείας για μείωση του cpi.
+    	  Λόγω προβλήματος με την εφαρμογή των γραφημάτων δεν μπόρεσα να βγάλω αντίστοιχα γραφήματα για το ερώτημα β οπότε δημιούργησα τα αρχεία txt για κάθε benchmark με επαρκή 
+	  σχόλια για αποσαφήνιση της συλλογιστικής πορείας για μείωση του cpi.
 	
 
 ###	ΕΡΩΤΗΜΑ 3
 
-	  Αν θεωρήσουμε μία ιδεατή μονάδα μέτρησης κόστους. Αυτή εξαρτάται από το μέγεθος των μνημών cache , από το συνολικό hardware που θα απαιτηθεί για την εξυπηρέτηση των αναγκών του συστήματος , το σύστημα θα αναπτυχθεί ως set associative που σημαίνει ότι όσο μεγαλώνει το associativity
-    μεγαλώνει η πολυπλοκότητα άρα και οι υλικές ανάγκες του συστήματος(κόστος). Επίσης 
+	  Αν θεωρήσουμε μία ιδεατή μονάδα μέτρησης κόστους. Αυτή εξαρτάται από το μέγεθος των μνημών cache , από το συνολικό hardware που θα απαιτηθεί για την εξυπηρέτηση των 
+	  αναγκών του συστήματος , το σύστημα θα αναπτυχθεί ως set associative που σημαίνει ότι όσο μεγαλώνει το associativity
+    	  μεγαλώνει η πολυπλοκότητα άρα και οι υλικές ανάγκες του συστήματος(κόστος). Επίσης 
 	
 			  Κόστος = _HARDWARE_FOR_ASSOCIATIVITY_+BLOCK_SIZE + L1 CACHE SIZE + L2 CACHE SIZE
 	
@@ -170,23 +177,31 @@
 					  Aυξανομένου μεγέθους αυξάνεται το κόστος.
 			  L2 CACHE SIZE COST : Όσο μεγαλύτερο τόσο πιο κοστοβόρο.
 		
-    Σε κάθε περίπτωση το κόστης της L1 είναι μεγαλύτερο από της  L2 , όμως ο χρόνος που θα απαιτηθεί και το misspenalty στην L2 είναι μεγαλύτερο απ' ότι στην L1 (προκύπτει από θεωρία και αποτελέσματα β μέρους) . Οπότε πρέπει να κάνουμε σωστή επιλογή των μεγεθών ώστε να παίρνουμε όσο δυνατόν
-    ταχύτερη ανάκτηση πληροφορίας  με το μικρότερο δυνατό κόστης ανάπτυξης.
-	  Όσο μεγαλύτερο το block size τόσο μικρότερο το miss rate όμως με αυξανόμενο miss penalty.
-    Τέλος όσο αυξάνουμε το associativity τόσο μεγαλώνει και ο χρόνος προσπέλασης.
-	  Με όλα αυτά τα στοιχεία και τα δεδομένα από τα αποτελέσματα του μέρους 2 μπορούμε να θεωρήσουμε πως υπάρχει ένα ιδανικό block size ανάλογα με τα μεγέθη των cache μνημών όπου με σωστή επιλογή του associativity μπορούμε να πάρουμε ταχύτερο cpi και να κάνουμε πιο γρήγορο το ΑΜΑΤ. 
-	  Η δική μου υπόθεση είναι πως για σχετικά μικρές l1 (data & instruction) αλλά θεωρητικά μεγάλες τιμές της l2 (2MB) l1d_assoc = 2 & l1i_assoc=2 , l2_assoc=4/8 για ένα cache line size = 64 βελτιστοποιείται η διαδικασία έχοντας παράλληλα χαμηλό κόστος κατασκευής.
+    	Σε κάθε περίπτωση το κόστης της L1 είναι μεγαλύτερο από της  L2 , όμως ο χρόνος που θα απαιτηθεί και το misspenalty στην L2 είναι μεγαλύτερο απ' ότι στην L1 (προκύπτει 
+	από θεωρία και αποτελέσματα β μέρους) . Οπότε πρέπει να κάνουμε σωστή επιλογή των μεγεθών ώστε να παίρνουμε όσο δυνατόν ταχύτερη ανάκτηση πληροφορίας  με το μικρότερο 
+	δυνατό κόστης ανάπτυξης.
+	Όσο μεγαλύτερο το block size τόσο μικρότερο το miss rate όμως με αυξανόμενο miss penalty.
+	Τέλος όσο αυξάνουμε το associativity τόσο μεγαλώνει και ο χρόνος προσπέλασης.
+	Με όλα αυτά τα στοιχεία και τα δεδομένα από τα αποτελέσματα του μέρους 2 μπορούμε να θεωρήσουμε πως υπάρχει ένα ιδανικό block size ανάλογα με τα μεγέθη των cache μνημών 
+	όπου με σωστή επιλογή του associativity μπορούμε να πάρουμε ταχύτερο cpi και να κάνουμε πιο γρήγορο το ΑΜΑΤ. 
+	Η δική μου υπόθεση είναι πως για σχετικά μικρές l1 (data & instruction) αλλά θεωρητικά μεγάλες τιμές της l2 (2MB) l1d_assoc = 2 & l1i_assoc=2 , l2_assoc=4/8 για ένα 
+	cache line size = 64 βελτιστοποιείται η διαδικασία έχοντας παράλληλα χαμηλό κόστος κατασκευής.
 		
 ### ΠΑΡΑΤΗΡΗΣΕΙΣ ΠΑΝΩ ΣΤΟ ΕΡΓΑΣΤΗΡΙΟ 2
 
 		Στο σημείο αυτό θα ήθελα να παραθέσω τις δυσκολίες, σκέψεις και ένα feedback από την ενασχόληση μου με αυτό το εργαστήριο. 
 		Αρχικά, ο τρόπος που προσπάθησα να εκτελέσω τα βήματα ήταν πολύ πιο οικείoς σε σχέση με το πρώτο εργαστήριο, καθώς υπήρχε μία εξοικείωση.
-		Παρ' όλα αυτά υπήρξε ένα πρόβλημα που με ταλαιπώρησε και έχει να κάνει με το benchmark "hmmer" όπου η εντολή -seed ετρεχε στο bash μου ως --seed και μου πήρε κάποιο χρόνο να το βρω στο διαδίκτυο.
-		Έπειτα , ανέφερα και στην αναφορά παραπάνω πως είχα θέμα με την δημιουργία γραφημάτων καθώς δεν μπορούσα να τα κάνω  copy paste από τα windows και στο ubuntu τα έβγαζε κάπως περίεργα, ενω τα δεδομενα του βηματος 2.2 δεν τα εβγαζε καθολου.
-		Παρόλα αυτά βρήκα ιδιαίτερα ενδιαφέρον το ότι μπορείς μέσα από θεωρητικές εξομοιώσεις της λειτουργίας ενός επεξεργαστή ότι μπορείς να πάρεις χρήσιμα δεδομένα για το πώς μπορείς να βελτιώσεις την απόδοση του και τι κόστος έχει κάθε επιλογή σου τόσο σε χρόνο όσο και σε πολυπλοκότητα - χρήμα.
+		Παρ' όλα αυτά υπήρξε ένα πρόβλημα που με ταλαιπώρησε και έχει να κάνει με το benchmark "hmmer" όπου η εντολή -seed ετρεχε στο bash μου ως --seed και μου πήρε 
+		κάποιο χρόνο να το βρω στο διαδίκτυο.
+		Έπειτα , ανέφερα και στην αναφορά παραπάνω πως είχα θέμα με την δημιουργία γραφημάτων καθώς δεν μπορούσα να τα κάνω  copy paste από τα windows και στο ubuntu τα 
+		έβγαζε κάπως περίεργα, ενω τα δεδομενα του βηματος 2.2 δεν τα εβγαζε καθολου.
+		Παρόλα αυτά βρήκα ιδιαίτερα ενδιαφέρον το ότι μπορείς μέσα από θεωρητικές εξομοιώσεις της λειτουργίας ενός επεξεργαστή ότι μπορείς να πάρεις χρήσιμα δεδομένα για 
+		το πώς μπορείς να βελτιώσεις την απόδοση του και τι κόστος έχει κάθε επιλογή σου τόσο σε χρόνο όσο και σε πολυπλοκότητα - χρήμα.
 		Ένα κομμάτι που με δυσκόλεψε και είχε αναφερθεί από την πρώτη στιγμή ήταν ο χρόνος που απαιτείται ώστε να τρέξουν τα  benchmarks.
-		Όταν άρχισα να καταλαβαίνω τα αποτελέσματα κάθε κλήσης άρχισα να αλλάζω της προυποθέσης εκτέλεσης τους ώστε σε μικρότερο χρόνο να βλέπεις αν οι αλλαγές έχουν θετικό ή αρνητικό αντίκτυπο στο Cpi.
-		Τέλος, ήταν πολύ χρήσιμο το script για αποθήκευση των stats που επιθυμώ καθώς έτσι είχα πιο γρήγορη και ολοκληρωμένη οπτική αν οι αλλαγές που κάνω οδηγούν στο επιθυμητό αποτέλεσμα.
+		Όταν άρχισα να καταλαβαίνω τα αποτελέσματα κάθε κλήσης άρχισα να αλλάζω της προυποθέσης εκτέλεσης τους ώστε σε μικρότερο χρόνο να βλέπεις αν οι αλλαγές έχουν 
+		θετικό ή αρνητικό αντίκτυπο στο Cpi.
+		Τέλος, ήταν πολύ χρήσιμο το script για αποθήκευση των stats που επιθυμώ καθώς έτσι είχα πιο γρήγορη και ολοκληρωμένη οπτική αν οι αλλαγές που κάνω οδηγούν στο 
+		επιθυμητό αποτέλεσμα.
 		
 		
 # ΒΙΒΛΙΟΓΡΑΦΙΑ
